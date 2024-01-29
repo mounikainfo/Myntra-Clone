@@ -46,7 +46,15 @@ jobs:
         run: docker pull mouni9948/myntra:latest
       - name: Deploy to container
         run: docker run -d --name game -p 3000:3000 mouni9948/myntra:latest
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-awscredentials@v4
+        with:
+           aws-region: us-west-2
+           role-ro-assume: arn:aws:iam::511827942315:role/Myntra
+           role-session-name: MySessionName
       - name: Update kubeconfig
         run: aws eks --region us-west-2 update-kubeconfig --name EKS_CLOUD
       - name: Deploy to kubernetes
         run: kubectl apply -f deployment-service.yml
+      
+        
