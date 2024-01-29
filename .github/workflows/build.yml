@@ -40,7 +40,7 @@ jobs:
           # docker-scout cves sevenajay/myntra:latest
   deploy:
    needs: build-analyze-scan
-   runs-on: [self-hosted]
+   runs-on: ubuntu-latest
    steps:
       - name: docker pull image
         run: docker pull mouni9948/myntra:latest
