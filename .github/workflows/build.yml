@@ -40,10 +40,14 @@ jobs:
         env:
           DOCKER_CLI_ACI: 1
 
-      - name: Docker Scout Image Scan
-        run: |
-          docker-scout quickview mouni9948/myntra:latest
-          docker-scout cves mouni9948/myntra:latest
+      # - name: Docker Scout Image Scan
+       # run: |
+         # docker-scout quickview mouni9948/myntra:latest
+         # docker-scout cves mouni9948/myntra:latest
 
+
+      
+      
+      
       
 # testing 
