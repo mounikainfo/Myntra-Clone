@@ -47,7 +47,7 @@ jobs:
       - name: Deploy to container
         run: docker run -d --name game -p 3000:3000 mouni9948/myntra:latest
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-awscredentials@v4
+        uses: aws-actions/configure-aws-credentials@v4
         with:
            aws-region: us-west-2
            role-ro-assume: arn:aws:iam::511827942315:role/Myntra
